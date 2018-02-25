@@ -25683,6 +25683,8 @@ ion-navbar.toolbar {
 }
 
 .wallet-header {
+  font-weight: 300;
+  font-size: 0.8em;
   height: 30%;
   position: relative;
 }
@@ -25691,10 +25693,10 @@ ion-navbar.toolbar {
   z-index: 3;
   background-color: white;
   border-radius: 50%;
-  width: 14vw;
-  height: 14vw;
+  width: 4.4em;
+  height: 4.4em;
   position: absolute;
-  right: 10.5vw;
+  right: 3.3em;
   bottom: 0px;
   -webkit-box-shadow: 0px 2px 5px #555;
   box-shadow: 0px 2px 5px #555;
@@ -25705,9 +25707,9 @@ ion-navbar.toolbar {
   top: 0;
   z-index: 2;
   width: 100%;
-  height: calc(100% - 7vw);
-  border-bottom-left-radius: 3.5vw;
-  border-bottom-right-radius: 3.5vw;
+  height: calc(100% - 2.2em);
+  border-bottom-left-radius: 1.1em;
+  border-bottom-right-radius: 1.1em;
   background: -webkit-gradient(linear, left top, right top, from(#947FEE), to(#FF75AF));
   background: linear-gradient(to right, #947FEE, #FF75AF);
   -webkit-box-shadow: 0px 2px 5px #555;
@@ -25716,22 +25718,118 @@ ion-navbar.toolbar {
 
 .wallet-header .content .white-gradient {
   height: 100%;
+  color: white;
   background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.6)));
   background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.6));
-  border-bottom-left-radius: 3.5vw;
-  border-bottom-right-radius: 3.5vw;
+  border-bottom-left-radius: 1.1em;
+  border-bottom-right-radius: 1.1em;
+}
+
+.wallet-header .content .col-center {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.wallet-header .content .center {
+  margin: auto;
+  text-align: center;
+}
+
+.wallet-header .content .circles-left {
+  content: '';
+  position: absolute;
+  bottom: 2em;
+  left: 2em;
+  border-radius: 50%;
+  background-color: white;
+  height: 0.2em;
+  width: 0.2em;
+}
+
+.wallet-header .content .circles-left:before {
+  content: '';
+  position: absolute;
+  bottom: 0em;
+  left: 3em;
+  border-radius: 50%;
+  background-color: white;
+  height: 0.4em;
+  width: 0.4em;
+}
+
+.wallet-header .content .circles-left:after {
+  content: '';
+  position: absolute;
+  bottom: 0.8em;
+  left: 1.6em;
+  border-radius: 50%;
+  background-color: white;
+  height: 0.8em;
+  width: 0.8em;
+}
+
+.wallet-header .content .circles-right {
+  content: '';
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
+  border-radius: 50%;
+  background-color: white;
+  height: 0.3em;
+  width: 0.3em;
+}
+
+.wallet-header .content .circles-right:before {
+  content: '';
+  position: absolute;
+  bottom: 0.6em;
+  right: 3em;
+  border-radius: 50%;
+  background-color: white;
+  height: 0.5em;
+  width: 0.5em;
+}
+
+.wallet-header .content .circles-right:after {
+  content: '';
+  position: absolute;
+  bottom: 0.8em;
+  right: 1.3em;
+  border-radius: 50%;
+  background-color: white;
+  height: 0.6em;
+  width: 0.6em;
+}
+
+.wallet-header .content .overall {
+  font-size: 1.4em;
+}
+
+.wallet-header .content .overall .number {
+  font-size: 3em;
+}
+
+.wallet-header .content .delta {
+  font-size: 1.4em;
 }
 
 .wallet-header:before {
   content: '';
   position: absolute;
   top: 0;
-  left: 7vw;
+  left: 2.2em;
   z-index: 0;
   height: 100%;
-  width: calc(100% - 14vw);
-  border-bottom-left-radius: 3.5vw;
-  border-bottom-right-radius: 3.5vw;
+  width: calc(100% - 4.4em);
+  border-bottom-left-radius: 1.1em;
+  border-bottom-right-radius: 1.1em;
   background: -webkit-gradient(linear, left top, right top, from(#947FEE), to(#FF75AF));
   background: linear-gradient(to right, #947FEE, #FF75AF);
   opacity: 0.2;
@@ -25743,12 +25841,12 @@ ion-navbar.toolbar {
   content: '';
   position: absolute;
   top: 0;
-  left: 3.5vw;
+  left: 1.1em;
   z-index: 1;
-  height: calc(100% - 3.5vw);
-  width: calc(100% - 7vw);
-  border-bottom-left-radius: 3.5vw;
-  border-bottom-right-radius: 3.5vw;
+  height: calc(100% - 1.1em);
+  width: calc(100% - 2.2em);
+  border-bottom-left-radius: 1.1em;
+  border-bottom-right-radius: 1.1em;
   background: -webkit-gradient(linear, left top, right top, from(#947FEE), to(#FF75AF));
   background: linear-gradient(to right, #947FEE, #FF75AF);
   opacity: 0.4;
