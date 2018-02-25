@@ -45,6 +45,18 @@
     </div>
   </div>
 
+
+  <div class="wallet-body">
+
+    <div class="coin-list">
+      <div *ngFor="let coin of coins; let i = index">
+        <div class="coin">
+          <div class="icon btc">{{i}}</div>
+          <div>{{coin | json}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
   <h2>Welcome to Ionic!</h2>
   <p>
     This starter project comes with simple tabs-based layout for apps

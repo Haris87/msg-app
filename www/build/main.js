@@ -165,16 +165,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var HomePage = (function () {
     function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
+        this.coins = [
+            new Coin('Bitcoin'),
+            new Coin('Ethereum'),
+            new Coin('Ripple'),
+            new Coin('Stellar Lumens'),
+            new Coin('Litecoin'),
+            new Coin('Ethereum Classic')
+        ];
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="main-bg">\n\n  <div class="wallet-header">\n\n    <button class="fab-button"></button>\n\n    <div class="content">\n      <div class="white-gradient">\n\n        <ion-grid>\n          <ion-row>\n            <ion-col class="col-center">\n              btn\n            </ion-col>\n            <ion-col col-8 class="col-center">\n              MULTISIGNIO\n            </ion-col>\n            <ion-col class="col-center">\n              qr\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col col-12 class="col-center">\n              <div class="circles-left">\n              </div>\n              <div class="center">\n                <div class="overall">$ <span class="number">92,939</span>.32</div>\n                <div class="delta">+ $170.25 (214.58%)</div>\n              </div>\n              <div class="circles-right">\n              </div>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </div>\n    </div>\n  </div>\n\n  <h2>Welcome to Ionic!</h2>\n  <p>\n    This starter project comes with simple tabs-based layout for apps\n    that are going to primarily use a Tabbed UI.\n  </p>\n  <p>\n    Take a look at the <code>src/pages/</code> directory to add or change tabs,\n    update any existing page or create new pages.\n  </p>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="main-bg">\n\n  <div class="wallet-header">\n\n    <button class="fab-button"></button>\n\n    <div class="content">\n      <div class="white-gradient">\n\n        <ion-grid>\n          <ion-row>\n            <ion-col class="col-center">\n              btn\n            </ion-col>\n            <ion-col col-8 class="col-center">\n              MULTISIGNIO\n            </ion-col>\n            <ion-col class="col-center">\n              qr\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col col-12 class="col-center">\n              <div class="circles-left">\n              </div>\n              <div class="center">\n                <div class="overall">$ <span class="number">92,939</span>.32</div>\n                <div class="delta">+ $170.25 (214.58%)</div>\n              </div>\n              <div class="circles-right">\n              </div>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </div>\n    </div>\n  </div>\n\n\n  <div class="wallet-body">\n\n    <div class="coin-list">\n      <div *ngFor="let coin of coins; let i = index">\n        <div class="coin">\n          <div class="icon btc">{{i}}</div>\n          <div>{{coin | json}}</div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <h2>Welcome to Ionic!</h2>\n  <p>\n    This starter project comes with simple tabs-based layout for apps\n    that are going to primarily use a Tabbed UI.\n  </p>\n  <p>\n    Take a look at the <code>src/pages/</code> directory to add or change tabs,\n    update any existing page or create new pages.\n  </p>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
     ], HomePage);
     return HomePage;
+    var _a;
 }());
 
+var Coin = (function () {
+    function Coin(name) {
+        this.name = name;
+    }
+    return Coin;
+}());
 //# sourceMappingURL=home.js.map
 
 /***/ }),

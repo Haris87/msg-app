@@ -11,4 +11,20 @@ export class HomePage {
 
   }
 
+  coins:any = [
+    new Coin('Bitcoin'),
+    new Coin('Ethereum'),
+    new Coin('Ripple'),
+    new Coin('Stellar Lumens'),
+    new Coin('Litecoin'),
+    new Coin('Ethereum Classic')
+  ];
+
+}
+
+class Coin {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
 }
