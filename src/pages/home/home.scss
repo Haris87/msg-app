@@ -1,0 +1,80 @@
+$borderRadius: 3.5vw;
+$shadow: 0px 2px 5px #555;
+
+page-home {
+  // background-color: #3D486B;
+}
+
+.main-bg {
+  background-color: #3D486B;
+}
+
+.wallet-header {
+  height: 30%;
+  position: relative;
+
+  .fab-button {
+    z-index: 3;
+    background-color: white;
+    border-radius: 50%;
+    width: 4*$borderRadius;
+    height: 4*$borderRadius;
+    position: absolute;
+    right: 3*$borderRadius;
+    bottom: 0px;
+    box-shadow: $shadow;
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: calc(100% - #{2*$borderRadius});
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    background: linear-gradient(to right, #947FEE, #FF75AF);
+    box-shadow: $shadow;
+
+    .white-gradient{
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.6));
+
+      border-bottom-left-radius: $borderRadius;
+      border-bottom-right-radius: $borderRadius;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2*$borderRadius;
+    z-index: 0;
+    height: 100%;
+    width: calc(100% - #{4*$borderRadius});
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    background: linear-gradient(to right, #947FEE, #FF75AF);
+    opacity: 0.2;
+
+    box-shadow: $shadow;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: $borderRadius;
+    z-index: 1;
+    height: calc(100% - #{$borderRadius});
+    width: calc(100% - #{2*$borderRadius});
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    background: linear-gradient(to right, #947FEE, #FF75AF);
+    opacity: 0.4;
+
+    box-shadow: $shadow;
+  }
+
+}
