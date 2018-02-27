@@ -195,9 +195,8 @@ ion-col {
 
     .coin {
       margin: 10px;
-      padding: 10px;
+      padding: 7px 0px;
       border-radius: $borderRadius;
-      height: 70px;
       background: linear-gradient(to right, rgba(255,255,255, 0.15), transparent);
       box-shadow: $coinShadow;
 
@@ -206,19 +205,38 @@ ion-col {
       }
 
       .icon {
-        line-height: 0.8em;
-        margin: 10px 0px;
-        padding: 10px;
-        border-radius: 50%;//$borderRadius/2;
-        height: 30px;
-        width: 30px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        filter: contrast(82%);
+
+        border-radius: $borderRadius;
+        height: 40px;
+        width: 40px;
+        background: linear-gradient(to right, grey, darkgrey);
+
+        .cc {
+          font-size: 1.5em;
+        }
 
         &.btc {
           background: linear-gradient(to right, $purple, $pink);
         }
 
+        &.xrp {
+          background: linear-gradient(to right, cyan, blue);
+        }
+
         &.eth {
           background: linear-gradient(to right, orange, $pink);
+        }
+
+        &.ltc {
+          background: linear-gradient(to right, grey, lightblue);
+        }
+
+        &.etc {
+          background: linear-gradient(to right, lightgreen, grey);
         }
       }
     }
@@ -227,8 +245,12 @@ ion-col {
 }
 
 .minimal-btn {
-  color: rgba(110,180,255, 0.8);
-  font-weight: 600
+  // color: rgba(110,180,255, 0.8);
+  font-weight: 600;
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, $purple), color-stop(0.6, $pink), color-stop(1, $pink));
+  color:rgba(255,255,255,  0.3);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .title {

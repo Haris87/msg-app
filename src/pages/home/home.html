@@ -80,11 +80,19 @@
     <div class="coin-list">
       <div *ngFor="let coin of coins; let i = index">
         <div class="coin" (click)="popup(coin.name)">
-          <div class="icon btc">{{i}}</div>
-          <div>
-            <div>{{coin.abbreviation}}</div>
-            <div class="subtitle">${{coin.price}}</div>
-          </div>
+          <ion-grid>
+            <ion-row>
+
+              <ion-col>
+                <div class="icon {{coin.abbreviation.toLowerCase()}}"><i class="cc {{coin.abbreviation}}-alt"></i></div>
+              </ion-col>
+              <ion-col>
+                  <div>{{coin.abbreviation}}</div>
+                  <div class="subtitle">${{coin.price}}</div>
+              </ion-col>
+            </ion-row>
+
+          </ion-grid>
         </div>
       </div>
     </div>

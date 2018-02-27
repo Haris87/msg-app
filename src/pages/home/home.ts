@@ -14,10 +14,10 @@ export class HomePage {
   coins:any = [
     new Coin('Bitcoin', 'BTC', 9230),
     new Coin('Ethereum', 'ETH', 956),
-    new Coin('Ripple', 'XRP', 0.03),
-    new Coin('Stellar Lumens', 'XLM', 0.43),
     new Coin('Litecoin', 'LTC', 153),
-    new Coin('Ethereum Classic', 'ETC', 176)
+    new Coin('Ripple', 'XRP', 0.03),
+    new Coin('Ethereum Classic', 'ETC', 176),
+    new Coin('Stellar Lumens', 'XLM', 0.43)
   ];
 
   popup(message){
@@ -33,6 +33,8 @@ export class HomePage {
 
 class Coin {
     name: string;
+    abbreviation: string;
+    price: number;
     constructor(name: string, abbr: string, price: number) {
         this.name = name;
         this.abbreviation = abbr;

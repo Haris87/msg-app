@@ -25865,9 +25865,8 @@ ion-navbar.toolbar {
 
 .wallet-body .coin-list .coin {
   margin: 10px;
-  padding: 10px;
+  padding: 7px 0px;
   border-radius: 1em;
-  height: 70px;
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.15)), to(transparent));
   background: linear-gradient(to right, rgba(255, 255, 255, 0.15), transparent);
   -webkit-box-shadow: 0px 4px 15px rgba(40, 40, 40, 0.5);
@@ -25879,12 +25878,20 @@ ion-navbar.toolbar {
 }
 
 .wallet-body .coin-list .coin .icon {
-  line-height: 0.8em;
-  margin: 10px 0px;
-  padding: 10px;
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-filter: contrast(82%);
+  filter: contrast(82%);
+  border-radius: 1em;
+  height: 40px;
+  width: 40px;
+  background: -webkit-gradient(linear, left top, right top, from(grey), to(darkgrey));
+  background: linear-gradient(to right, grey, darkgrey);
+}
+
+.wallet-body .coin-list .coin .icon .cc {
+  font-size: 1.5em;
 }
 
 .wallet-body .coin-list .coin .icon.btc {
@@ -25892,14 +25899,32 @@ ion-navbar.toolbar {
   background: linear-gradient(to right, #947FEE, #FA4A8C);
 }
 
+.wallet-body .coin-list .coin .icon.xrp {
+  background: -webkit-gradient(linear, left top, right top, from(cyan), to(blue));
+  background: linear-gradient(to right, cyan, blue);
+}
+
 .wallet-body .coin-list .coin .icon.eth {
   background: -webkit-gradient(linear, left top, right top, from(orange), to(#FA4A8C));
   background: linear-gradient(to right, orange, #FA4A8C);
 }
 
+.wallet-body .coin-list .coin .icon.ltc {
+  background: -webkit-gradient(linear, left top, right top, from(grey), to(lightblue));
+  background: linear-gradient(to right, grey, lightblue);
+}
+
+.wallet-body .coin-list .coin .icon.etc {
+  background: -webkit-gradient(linear, left top, right top, from(lightgreen), to(grey));
+  background: linear-gradient(to right, lightgreen, grey);
+}
+
 .minimal-btn {
-  color: rgba(110, 180, 255, 0.8);
   font-weight: 600;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #947FEE), color-stop(0.6, #FA4A8C), color-stop(1, #FA4A8C));
+  color: rgba(255, 255, 255, 0.3);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .title {
