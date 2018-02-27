@@ -67,53 +67,25 @@ ion-col {
       text-align: center;
     }
 
+    .relative {
+      position: relative;
+      // border: 1px solid red;
+    }
+
     .circles-left {
       content: '';
       position: absolute;
       bottom: 2em;
-      left: 2em;
+      right: 0em;
       border-radius: 50%;
       background-color: white;
-      height: 0.2em;
-      width: 0.2em;
+      height: 0.4em;
+      width: 0.4em;
 
       &:before {
         content: '';
         position: absolute;
         bottom: 0em;
-        left: 3em;
-        border-radius: 50%;
-        background-color: white;
-        height: 0.4em;
-        width: 0.4em;
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0.8em;
-        left: 1.6em;
-        border-radius: 50%;
-        background-color: white;
-        height: 0.8em;
-        width: 0.8em;
-      }
-    }
-
-    .circles-right {
-      content: '';
-      position: absolute;
-      bottom: 2em;
-      right: 2em;
-      border-radius: 50%;
-      background-color: white;
-      height: 0.3em;
-      width: 0.3em;
-
-      &:before {
-        content: '';
-        position: absolute;
-        bottom: 0.6em;
         right: 3em;
         border-radius: 50%;
         background-color: white;
@@ -125,7 +97,40 @@ ion-col {
         content: '';
         position: absolute;
         bottom: 0.8em;
-        right: 1.3em;
+        right: 1.6em;
+        border-radius: 50%;
+        background-color: white;
+        height: 0.8em;
+        width: 0.8em;
+      }
+    }
+
+    .circles-right {
+      content: '';
+      position: absolute;
+      bottom: 2em;
+      left: 0em;
+      border-radius: 50%;
+      background-color: white;
+      height: 0.3em;
+      width: 0.3em;
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0.6em;
+        left: 3em;
+        border-radius: 50%;
+        background-color: white;
+        height: 0.5em;
+        width: 0.5em;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0.8em;
+        left: 1.3em;
         border-radius: 50%;
         background-color: white;
         height: 0.6em;
@@ -185,8 +190,8 @@ ion-col {
 
   .coin-list {
 
-    max-height: 300px;
-    overflow-y: scroll;
+    // max-height: 300px;
+    // overflow-y: scroll;
 
     .coin {
       margin: 10px;
@@ -201,10 +206,10 @@ ion-col {
       }
 
       .icon {
-        line-height: 1em;
+        line-height: 0.8em;
         margin: 10px 0px;
         padding: 10px;
-        border-radius: $borderRadius/2;
+        border-radius: 50%;//$borderRadius/2;
         height: 30px;
         width: 30px;
 
@@ -219,4 +224,24 @@ ion-col {
     }
 
   }
+}
+
+.minimal-btn {
+  color: rgba(110,180,255, 0.8);
+  font-weight: 600
+}
+
+.title {
+  font-size:1.7em;
+  margin-bottom:5px;
+  font-weight: 300;
+}
+
+.subtitle {
+  font-weight: 300;
+  color: rgba(200, 200, 200, 0.6);
+}
+
+.right {
+  text-align: right !important;
 }

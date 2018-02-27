@@ -8,7 +8,7 @@
 
   <div class="wallet-header">
 
-    <button class="fab-button"></button>
+    <button (click)="popup('fab button')" class="fab-button"></button>
 
     <div class="content">
       <div class="white-gradient">
@@ -27,13 +27,18 @@
           </ion-row>
 
           <ion-row>
-            <ion-col col-12 class="col-center">
+            <ion-col class="relative">
               <div class="circles-left">
               </div>
+            </ion-col>
+            <ion-col col-8 class="col-center">
               <div class="center">
-                <div class="overall">$ <span class="number">92,939</span>.32</div>
+                <div class="overall">$ <span class="number">929,939</span>.32</div>
                 <div class="delta">+ $170.25 (214.58%)</div>
               </div>
+
+            </ion-col>
+            <ion-col class="relative">
               <div class="circles-right">
               </div>
             </ion-col>
@@ -48,22 +53,41 @@
 
   <div class="wallet-body">
 
+    <div>
+      <ion-grid>
+        <ion-row style="padding:25px 0;">
+          <ion-col col-1></ion-col>
+          <ion-col col-5 class="col-center">
+            <div class="title">My Wallet</div>
+            <div class="subtitle">$4,221 (221,6%)</div>
+          </ion-col>
+          <ion-col col-5 class="right">
+
+            <div class="right">
+              <a (click)="popup('add coin')" class="minimal-btn">ADD COIN</a>
+            </div>
+
+          </ion-col>
+          <ion-col col-1></ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+
+
+
+
     <div class="coin-list">
       <div *ngFor="let coin of coins; let i = index">
-        <div class="coin">
+        <div class="coin" (click)="popup(coin.name)">
           <div class="icon btc">{{i}}</div>
-          <div>{{coin | json}}</div>
+          <div>
+            <div>{{coin.abbreviation}}</div>
+            <div class="subtitle">${{coin.price}}</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
 </ion-content>

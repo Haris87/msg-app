@@ -25742,33 +25742,37 @@ ion-navbar.toolbar {
   text-align: center;
 }
 
+.wallet-header .content .relative {
+  position: relative;
+}
+
 .wallet-header .content .circles-left {
   content: '';
   position: absolute;
   bottom: 2em;
-  left: 2em;
-  border-radius: 50%;
-  background-color: white;
-  height: 0.2em;
-  width: 0.2em;
-}
-
-.wallet-header .content .circles-left:before {
-  content: '';
-  position: absolute;
-  bottom: 0em;
-  left: 3em;
+  right: 0em;
   border-radius: 50%;
   background-color: white;
   height: 0.4em;
   width: 0.4em;
 }
 
+.wallet-header .content .circles-left:before {
+  content: '';
+  position: absolute;
+  bottom: 0em;
+  right: 3em;
+  border-radius: 50%;
+  background-color: white;
+  height: 0.5em;
+  width: 0.5em;
+}
+
 .wallet-header .content .circles-left:after {
   content: '';
   position: absolute;
   bottom: 0.8em;
-  left: 1.6em;
+  right: 1.6em;
   border-radius: 50%;
   background-color: white;
   height: 0.8em;
@@ -25779,7 +25783,7 @@ ion-navbar.toolbar {
   content: '';
   position: absolute;
   bottom: 2em;
-  right: 2em;
+  left: 0em;
   border-radius: 50%;
   background-color: white;
   height: 0.3em;
@@ -25790,7 +25794,7 @@ ion-navbar.toolbar {
   content: '';
   position: absolute;
   bottom: 0.6em;
-  right: 3em;
+  left: 3em;
   border-radius: 50%;
   background-color: white;
   height: 0.5em;
@@ -25801,7 +25805,7 @@ ion-navbar.toolbar {
   content: '';
   position: absolute;
   bottom: 0.8em;
-  right: 1.3em;
+  left: 1.3em;
   border-radius: 50%;
   background-color: white;
   height: 0.6em;
@@ -25859,11 +25863,6 @@ ion-navbar.toolbar {
   font-weight: 300;
 }
 
-.wallet-body .coin-list {
-  max-height: 300px;
-  overflow-y: scroll;
-}
-
 .wallet-body .coin-list .coin {
   margin: 10px;
   padding: 10px;
@@ -25880,10 +25879,10 @@ ion-navbar.toolbar {
 }
 
 .wallet-body .coin-list .coin .icon {
-  line-height: 1em;
+  line-height: 0.8em;
   margin: 10px 0px;
   padding: 10px;
-  border-radius: 0.5em;
+  border-radius: 50%;
   height: 30px;
   width: 30px;
 }
@@ -25896,4 +25895,24 @@ ion-navbar.toolbar {
 .wallet-body .coin-list .coin .icon.eth {
   background: -webkit-gradient(linear, left top, right top, from(orange), to(#FA4A8C));
   background: linear-gradient(to right, orange, #FA4A8C);
+}
+
+.minimal-btn {
+  color: rgba(110, 180, 255, 0.8);
+  font-weight: 600;
+}
+
+.title {
+  font-size: 1.7em;
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+
+.subtitle {
+  font-weight: 300;
+  color: rgba(200, 200, 200, 0.6);
+}
+
+.right {
+  text-align: right !important;
 }

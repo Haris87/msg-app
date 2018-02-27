@@ -100,7 +100,7 @@ var AboutPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-about',template:/*ion-inline-start:"C:\Users\Haris\Documents\msg-app\src\pages\about\about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Haris\Documents\msg-app\src\pages\about\about.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], AboutPage);
     return AboutPage;
 }());
@@ -135,7 +135,7 @@ var ContactPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-contact',template:/*ion-inline-start:"C:\Users\Haris\Documents\msg-app\src\pages\contact\contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Contact\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-start></ion-icon>\n      @ionicframework\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Haris\Documents\msg-app\src\pages\contact\contact.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], ContactPage);
     return ContactPage;
 }());
@@ -163,30 +163,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = (function () {
-    function HomePage(navCtrl) {
+    function HomePage(navCtrl, alertCtrl) {
         this.navCtrl = navCtrl;
+        this.alertCtrl = alertCtrl;
         this.coins = [
-            new Coin('Bitcoin'),
-            new Coin('Ethereum'),
-            new Coin('Ripple'),
-            new Coin('Stellar Lumens'),
-            new Coin('Litecoin'),
-            new Coin('Ethereum Classic')
+            new Coin('Bitcoin', 'BTC', 9230),
+            new Coin('Ethereum', 'ETH', 956),
+            new Coin('Ripple', 'XRP', 0.03),
+            new Coin('Stellar Lumens', 'XLM', 0.43),
+            new Coin('Litecoin', 'LTC', 153),
+            new Coin('Ethereum Classic', 'ETC', 176)
         ];
     }
+    HomePage.prototype.popup = function (message) {
+        var alert = this.alertCtrl.create({
+            title: 'Alert!',
+            subTitle: message,
+            buttons: ['OK']
+        });
+        alert.present();
+    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="main-bg">\n\n  <div class="wallet-header">\n\n    <button class="fab-button"></button>\n\n    <div class="content">\n      <div class="white-gradient">\n\n        <ion-grid>\n          <ion-row>\n            <ion-col class="col-center">\n              btn\n            </ion-col>\n            <ion-col col-8 class="col-center">\n              MULTISIGNIO\n            </ion-col>\n            <ion-col class="col-center">\n              qr\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col col-12 class="col-center">\n              <div class="circles-left">\n              </div>\n              <div class="center">\n                <div class="overall">$ <span class="number">92,939</span>.32</div>\n                <div class="delta">+ $170.25 (214.58%)</div>\n              </div>\n              <div class="circles-right">\n              </div>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </div>\n    </div>\n  </div>\n\n\n  <div class="wallet-body">\n\n    <div class="coin-list">\n      <div *ngFor="let coin of coins; let i = index">\n        <div class="coin">\n          <div class="icon btc">{{i}}</div>\n          <div>{{coin | json}}</div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <h2>Welcome to Ionic!</h2>\n  <p>\n    This starter project comes with simple tabs-based layout for apps\n    that are going to primarily use a Tabbed UI.\n  </p>\n  <p>\n    Take a look at the <code>src/pages/</code> directory to add or change tabs,\n    update any existing page or create new pages.\n  </p>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="main-bg">\n\n  <div class="wallet-header">\n\n    <button (click)="popup(\'fab button\')" class="fab-button"></button>\n\n    <div class="content">\n      <div class="white-gradient">\n\n        <ion-grid>\n          <ion-row>\n            <ion-col class="col-center">\n              btn\n            </ion-col>\n            <ion-col col-8 class="col-center">\n              MULTISIGNIO\n            </ion-col>\n            <ion-col class="col-center">\n              qr\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col class="relative">\n              <div class="circles-left">\n              </div>\n            </ion-col>\n            <ion-col col-8 class="col-center">\n              <div class="center">\n                <div class="overall">$ <span class="number">929,939</span>.32</div>\n                <div class="delta">+ $170.25 (214.58%)</div>\n              </div>\n\n            </ion-col>\n            <ion-col class="relative">\n              <div class="circles-right">\n              </div>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </div>\n    </div>\n  </div>\n\n\n  <div class="wallet-body">\n\n    <div>\n      <ion-grid>\n        <ion-row style="padding:25px 0;">\n          <ion-col col-1></ion-col>\n          <ion-col col-5 class="col-center">\n            <div class="title">My Wallet</div>\n            <div class="subtitle">$4,221 (221,6%)</div>\n          </ion-col>\n          <ion-col col-5 class="right">\n\n            <div class="right">\n              <a (click)="popup(\'add coin\')" class="minimal-btn">ADD COIN</a>\n            </div>\n\n          </ion-col>\n          <ion-col col-1></ion-col>\n        </ion-row>\n\n      </ion-grid>\n    </div>\n\n\n\n\n    <div class="coin-list">\n      <div *ngFor="let coin of coins; let i = index">\n        <div class="coin" (click)="popup(coin.name)">\n          <div class="icon btc">{{i}}</div>\n          <div>\n            <div>{{coin.abbreviation}}</div>\n            <div class="subtitle">${{coin.price}}</div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object])
     ], HomePage);
     return HomePage;
-    var _a;
+    var _a, _b;
 }());
 
 var Coin = (function () {
-    function Coin(name) {
+    function Coin(name, abbr, price) {
         this.name = name;
+        this.abbreviation = abbr;
+        this.price = price;
     }
     return Coin;
 }());
@@ -253,11 +264,11 @@ var AppModule = (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: []
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_about_about__["a" /* AboutPage */],
@@ -268,7 +279,7 @@ var AppModule = (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
     ], AppModule);
@@ -288,7 +299,7 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(197);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -302,10 +313,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+// import { TabsPage } from '../pages/tabs/tabs';
 
 var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -316,9 +328,10 @@ var MyApp = (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Haris\Documents\msg-app\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\Haris\Documents\msg-app\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=app.component.js.map
