@@ -12,12 +12,12 @@ export class HomePage {
   }
 
   coins:any = [
-    new Coin('Bitcoin', 'BTC', 9230),
-    new Coin('Ethereum', 'ETH', 956),
-    new Coin('Litecoin', 'LTC', 153),
-    new Coin('Ripple', 'XRP', 0.03),
-    new Coin('Ethereum Classic', 'ETC', 176),
-    new Coin('Stellar Lumens', 'XLM', 0.43)
+    new Coin('Bitcoin', 'BTC', 9230, 0.012),
+    new Coin('Ethereum', 'ETH', 956, 1.87),
+    new Coin('Litecoin', 'LTC', 153, 2.3445),
+    new Coin('Ripple', 'XRP', 0.03, 1030.4),
+    new Coin('Ethereum Classic', 'ETC', 176, 0),
+    new Coin('Stellar Lumens', 'XLM', 0.43, 0)
   ];
 
   popup(message){
@@ -35,9 +35,15 @@ class Coin {
     name: string;
     abbreviation: string;
     price: number;
-    constructor(name: string, abbr: string, price: number) {
+    num: number;
+    constructor(name: string, abbr: string, price: number, num: number) {
         this.name = name;
         this.abbreviation = abbr;
         this.price = price;
+        this.num = num;
+    }
+
+    value(){
+      return (this.num * this.price).toFixed(3);
     }
 }

@@ -25864,6 +25864,7 @@ ion-navbar.toolbar {
 }
 
 .wallet-body .coin-list .coin {
+  font-size: 0.8em;
   margin: 10px;
   padding: 7px 0px;
   border-radius: 1em;
@@ -25871,6 +25872,11 @@ ion-navbar.toolbar {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.15), transparent);
   -webkit-box-shadow: 0px 4px 15px rgba(40, 40, 40, 0.5);
   box-shadow: 0px 4px 15px rgba(40, 40, 40, 0.5);
+}
+
+.wallet-body .coin-list .coin .title {
+  font-size: 1em;
+  font-weight: 400;
 }
 
 .wallet-body .coin-list .coin div {

@@ -299,12 +299,12 @@ var HomePage = (function () {
         this.navCtrl = navCtrl;
         this.alertCtrl = alertCtrl;
         this.coins = [
-            new Coin('Bitcoin', 'BTC', 9230),
-            new Coin('Ethereum', 'ETH', 956),
-            new Coin('Litecoin', 'LTC', 153),
-            new Coin('Ripple', 'XRP', 0.03),
-            new Coin('Ethereum Classic', 'ETC', 176),
-            new Coin('Stellar Lumens', 'XLM', 0.43)
+            new Coin('Bitcoin', 'BTC', 9230, 0.012),
+            new Coin('Ethereum', 'ETH', 956, 1.87),
+            new Coin('Litecoin', 'LTC', 153, 2.3445),
+            new Coin('Ripple', 'XRP', 0.03, 1030.4),
+            new Coin('Ethereum Classic', 'ETC', 176, 0),
+            new Coin('Stellar Lumens', 'XLM', 0.43, 0)
         ];
     }
     HomePage.prototype.popup = function (message) {
@@ -317,7 +317,7 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="main-bg">\n\n  <div class="wallet-header">\n\n    <button (click)="popup(\'fab button\')" class="fab-button"></button>\n\n    <div class="content">\n      <div class="white-gradient">\n\n        <ion-grid>\n          <ion-row>\n            <ion-col class="col-center">\n              btn\n            </ion-col>\n            <ion-col col-8 class="col-center">\n              MULTISIGNIO\n            </ion-col>\n            <ion-col class="col-center">\n              qr\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col class="relative">\n              <div class="circles-left">\n              </div>\n            </ion-col>\n            <ion-col col-8 class="col-center">\n              <div class="center">\n                <div class="overall">$ <span class="number">929,939</span>.32</div>\n                <div class="delta">+ $170.25 (214.58%)</div>\n              </div>\n\n            </ion-col>\n            <ion-col class="relative">\n              <div class="circles-right">\n              </div>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </div>\n    </div>\n  </div>\n\n\n  <div class="wallet-body">\n\n    <div>\n      <ion-grid>\n        <ion-row style="padding:25px 0;">\n          <ion-col col-1></ion-col>\n          <ion-col col-5 class="col-center">\n            <div class="title">My Wallet</div>\n            <div class="subtitle">$4,221 (221,6%)</div>\n          </ion-col>\n          <ion-col col-5 class="right">\n\n            <div class="right">\n              <a (click)="popup(\'add coin\')" class="minimal-btn">ADD COIN</a>\n            </div>\n\n          </ion-col>\n          <ion-col col-1></ion-col>\n        </ion-row>\n\n      </ion-grid>\n    </div>\n\n\n\n\n    <div class="coin-list">\n      <div *ngFor="let coin of coins; let i = index">\n        <div class="coin" (click)="popup(coin.name)">\n          <ion-grid>\n            <ion-row>\n\n              <ion-col>\n                <div class="icon {{coin.abbreviation.toLowerCase()}}"><i class="cc {{coin.abbreviation}}-alt"></i></div>\n              </ion-col>\n              <ion-col>\n                  <div>{{coin.abbreviation}}</div>\n                  <div class="subtitle">${{coin.price}}</div>\n              </ion-col>\n            </ion-row>\n\n          </ion-grid>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="main-bg">\n\n  <div class="wallet-header">\n\n    <button (click)="popup(\'fab button\')" class="fab-button"></button>\n\n    <div class="content">\n      <div class="white-gradient">\n\n        <ion-grid>\n          <ion-row>\n            <ion-col class="col-center">\n              btn\n            </ion-col>\n            <ion-col col-8 class="col-center">\n              MULTISIGNIO\n            </ion-col>\n            <ion-col class="col-center">\n              qr\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col class="relative">\n              <div class="circles-left">\n              </div>\n            </ion-col>\n            <ion-col col-8 class="col-center">\n              <div class="center">\n                <div class="overall">$ <span class="number">929,939</span>.32</div>\n                <div class="delta">+ $170.25 (214.58%)</div>\n              </div>\n\n            </ion-col>\n            <ion-col class="relative">\n              <div class="circles-right">\n              </div>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </div>\n    </div>\n  </div>\n\n\n  <div class="wallet-body">\n\n    <div>\n      <ion-grid>\n        <ion-row style="padding:25px 0;">\n          <ion-col col-1></ion-col>\n          <ion-col col-5 class="col-center">\n            <div class="title">My Wallet</div>\n            <div class="subtitle">$4,221 (221,6%)</div>\n          </ion-col>\n          <ion-col col-5 class="right">\n\n            <div class="right">\n              <a (click)="popup(\'add coin\')" class="minimal-btn">ADD COIN</a>\n            </div>\n\n          </ion-col>\n          <ion-col col-1></ion-col>\n        </ion-row>\n\n      </ion-grid>\n    </div>\n\n\n\n\n    <div class="coin-list">\n      <div *ngFor="let coin of coins; let i = index">\n        <div class="coin" (click)="popup(coin.name)">\n          <ion-grid>\n            <ion-row>\n\n              <ion-col col-2>\n                <div class="icon {{coin.abbreviation.toLowerCase()}}"><i class="cc {{coin.abbreviation}}-alt"></i></div>\n              </ion-col>\n              <ion-col col-3>\n                  <div class="title">{{coin.abbreviation}}</div><br/>\n                  <div class="subtitle">${{coin.price}}</div>\n              </ion-col>\n              <ion-col col-4>\n                  <div class="title">${{coin.value()}}</div><br/>\n                  <div class="subtitle">{{coin.num}} coins</div>\n              </ion-col>\n              <ion-col col-3>\n                  <div>GRAPH</div>\n              </ion-col>\n\n            </ion-row>\n\n          </ion-grid>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Haris\Documents\msg-app\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object])
     ], HomePage);
@@ -326,11 +326,15 @@ var HomePage = (function () {
 }());
 
 var Coin = (function () {
-    function Coin(name, abbr, price) {
+    function Coin(name, abbr, price, num) {
         this.name = name;
         this.abbreviation = abbr;
         this.price = price;
+        this.num = num;
     }
+    Coin.prototype.value = function () {
+        return (this.num * this.price).toFixed(3);
+    };
     return Coin;
 }());
 //# sourceMappingURL=home.js.map

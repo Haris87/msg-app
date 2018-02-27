@@ -83,13 +83,21 @@
           <ion-grid>
             <ion-row>
 
-              <ion-col>
+              <ion-col col-2>
                 <div class="icon {{coin.abbreviation.toLowerCase()}}"><i class="cc {{coin.abbreviation}}-alt"></i></div>
               </ion-col>
-              <ion-col>
-                  <div>{{coin.abbreviation}}</div>
+              <ion-col col-3>
+                  <div class="title">{{coin.abbreviation}}</div><br/>
                   <div class="subtitle">${{coin.price}}</div>
               </ion-col>
+              <ion-col col-4>
+                  <div class="title">${{coin.value()}}</div><br/>
+                  <div class="subtitle">{{coin.num}} coins</div>
+              </ion-col>
+              <ion-col col-3>
+                  <div>GRAPH</div>
+              </ion-col>
+
             </ion-row>
 
           </ion-grid>
